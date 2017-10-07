@@ -1,0 +1,16 @@
+{
+  "name": "levelup-steps",
+  "version": "1.0.0",
+  "description": "An utility to easily check what you have to do to level up a character in Dungeons and Dragons 5th edition",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "D&D",
+    "5th",
+    "edition"
+  ],
+  "author": "Eric Brandwein",
+  "license": "ISC"
+}
