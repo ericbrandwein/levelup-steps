@@ -26,8 +26,17 @@ Classes = {
     }
 }
 
+function getClassByName(name){
+    for (var characterClass in Classes) {
+        // We need to check that the property is of the Classes object
+        if (Classes.hasOwnProperty(characterClass) &&
+            Classes[characterClass].name === name) {
+            return Classes[characterClass];
+        }
+    }
+}
+
 function get(characterClass, characterLevel, callback){
-    var description;
     getBasicDescription(characterClass, (err, data) => {
         callback(err, getDescriptionPage(data));
     });
@@ -48,5 +57,6 @@ function getDescriptionPage(description){
 
 module.exports = {
     Classes,
-    get
+    get,
+    getClassByName
 };
