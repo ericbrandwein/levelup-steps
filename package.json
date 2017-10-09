@@ -13,6 +13,7 @@
   "author": "Eric Brandwein",
   "license": "GNU GPLv3",
   "dependencies": {
-    "express": "^4.16.1"
+    "express": "^4.16.1",
+    "pug": "^2.0.0-rc.4"
   }
 }
