@@ -1,4 +1,5 @@
 var fs = require('fs');
+var pug = require('pug');
 
 var DESCRIPTIONS_DIR = './descriptions/'
 
@@ -25,33 +26,18 @@ Classes = {
     }
 }
 
-
 function get(characterClass, characterLevel, callback){
     var description;
-    getHitDiceIncreaseDescription(characterClass, (err, data) => {
-        description = data + '\n';
-        getHitPointsIncreaseDescription(characterClass, (err, data) => {
-            description += data + '\n';
-            callback(err, getDescriptionPage(description));
-        });
+    getBasicDescription(characterClass, (err, data) => {
+        callback(err, getDescriptionPage(data));
     });
 }
 
-function getHitDiceIncreaseDescription(characterClass, callback){
-    fs.readFile(DESCRIPTIONS_DIR + 'hit-dice-increase.html', (err, data) => {
-        var newData = String(data).replace("%die%", characterClass.hitDieNumber);
-        callback(err, newData);
-    });
-}
-
-function getHitPointsIncreaseDescription(characterClass, callback){
-    fs.readFile(DESCRIPTIONS_DIR + 'hit-points-increase.html', (err, data) => {
-        var newData = String(data).replace('%die%', characterClass.hitDieNumber);
-        newData = newData.replace('%average%',
-            characterClass.hitPointIncreaseAverage);
-        newData = newData.replace('%class%', characterClass.name);
-        callback(err, newData);
-    });
+function getBasicDescription(characterClass, callback){
+    pug.renderFile(
+        DESCRIPTIONS_DIR + 'basic-steps.pug',
+        characterClass,
+        callback);
 }
 
 function getDescriptionPage(description){
