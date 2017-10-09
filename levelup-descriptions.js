@@ -5,17 +5,17 @@ var DESCRIPTIONS_DIR = './descriptions/'
 Classes = {
     BARBARIAN: {
         name: 'barbarian',
-        hitDie: 'd12',
+        hitDieNumber: 12,
         hitPointIncreaseAverage: 7
     },
     BARD: {
         name: 'bard',
-        hitDie: 'd8',
+        hitDieNumber: 8,
         hitPointIncreaseAverage: 5
     },
     WIZARD: {
         name: 'wizard',
-        hitDie: 'd6',
+        hitDieNumber: 6,
         hitPointIncreaseAverage: 4
     }
 }
@@ -34,14 +34,14 @@ function get(characterClass, characterLevel, callback){
 
 function getHitDiceIncreaseDescription(characterClass, callback){
     fs.readFile(DESCRIPTIONS_DIR + 'hit-dice-increase.html', (err, data) => {
-        var newData = String(data).replace("%die%", characterClass.hitDie);
+        var newData = String(data).replace("%die%", characterClass.hitDieNumber);
         callback(err, newData);
     });
 }
 
 function getHitPointsIncreaseDescription(characterClass, callback){
     fs.readFile(DESCRIPTIONS_DIR + 'hit-points-increase.html', (err, data) => {
-        var newData = String(data).replace('%die%', characterClass.hitDie);
+        var newData = String(data).replace('%die%', characterClass.hitDieNumber);
         newData = newData.replace('%average%',
             characterClass.hitPointIncreaseAverage);
         newData = newData.replace('%class%', characterClass.name);
