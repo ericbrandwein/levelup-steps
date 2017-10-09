@@ -1,9 +1,16 @@
 var http = require('http');
+var express = require('express');
+var app = express();
 var descriptions = require('./levelup-descriptions.js')
 
-http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end(descriptions.get(descriptions.Classes.BARBARIAN, 2));
-}).listen(8080);
+app.get('/', function(req, res) {
+    descriptions.get(descriptions.Classes.BARBARIAN, 2, (err, data) => {
+        if (err) throw err;
+        console.log(data);
+        res.end(data);
+    });
+});
 
+app.listen(8080, function (req, res) {
 
+});

@@ -12,5 +12,8 @@
     "edition"
   ],
   "author": "Eric Brandwein",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.1"
+  }
 }
