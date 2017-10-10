@@ -38,7 +38,12 @@ function getClassByName(name){
 
 function get(characterClass, characterLevel, callback){
     getBasicDescription(characterClass, (err, data) => {
-        callback(err, getDescriptionPage(data));
+        var description = data;
+        getDescriptionByClassAndLevel(characterClass, characterLevel,
+            (err, data) => {
+                description += data;
+                callback(err, getDescriptionPage(description));
+        });
     });
 }
 
