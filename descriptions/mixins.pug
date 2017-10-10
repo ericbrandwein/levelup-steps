@@ -1,0 +1,14 @@
+mixin cantrips(number, clazz)
+    h2 New Cantrips
+        p You learn #{number} new cantrips from the #{clazz} spell list.
+
+mixin spell-slots(spellSlots)
+    h2 New Spell Slots
+    each number, level in spellSlots
+        p You have now #{number} total spell slots of level #{level}.
+
+mixin spells(number, clazz)
+    h2 New Spells
+    p
+        | You learn #{number} new spells from the #{clazz} spell list, given
+        | that you have spell slots of that spell's level.
