@@ -1,0 +1,15 @@
+include ../mixins.pug
+
++proficiency-bonus('+3')
++spell-slots({3:2})
++spells(1, 'bard')
+
+include bardic-inspiration-mixin.pug
+
++bardic-inspiration(8)
+
+h2 Font of Inspiration
+p
+    | You regain all of
+    | your expended uses of Bardic Inspiration when you
+    | finish a short or long rest.
