@@ -55,6 +55,12 @@ function getDescriptionPage(description){
     return head + description + tail;
 }
 
+function getDescriptionByClassAndLevel(characterClass, characterLevel, callback){
+    var descriptionFileName =
+        DESCRIPTIONS_DIR + characterClass.name + '/' + characterLevel + '.pug';
+    pug.renderFile(descriptionFileName, characterClass, callback);
+}
+
 module.exports = {
     Classes,
     get,
