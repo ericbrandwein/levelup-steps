@@ -26,6 +26,9 @@ block description
     if level in spellsLearned
         +spells(spellsLearned[level], name)
 
+    if ['5', '10', '15'].includes(level)
+        include bardic-inspiration-change.pug
+
     include ../remember.pug
     -
         var itemsToRemember = {
