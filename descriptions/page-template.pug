@@ -12,7 +12,7 @@ html
             | Your maximum hit points increase by 1d#{hitDieNumber}
             | (or #{hitPointIncreaseAverage}) + your Constitution modifier.
 
-        if [5, 9, 13, 17].includes(level)
+        if ['5', '9', '13', '17'].includes(level)
             include proficiency-bonus.pug
 
         block description
