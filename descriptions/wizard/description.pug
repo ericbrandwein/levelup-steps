@@ -1,0 +1,13 @@
+extends ../page-template.pug
+
+block description
+    if ['4', '10'].includes(level)
+        +cantrips(1, name)
+
+    if level in spellSlotsPerLevel
+        include spell-slots.pug
+
+    include new-spells.pug
+
+    if ['4', '8', '12', '16', '19'].includes(level)
+        include ../ability-score-improvement.pug
