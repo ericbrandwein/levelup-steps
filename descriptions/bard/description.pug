@@ -41,6 +41,9 @@ block description
     if ['3', '10'].includes(level)
         include expertise.pug
 
+    if ['4', '8', '12', '16', '19'].includes(level)
+        include ../ability-score-improvement.pug
+
     include ../remember.pug
     -
         var itemsToRemember = {
