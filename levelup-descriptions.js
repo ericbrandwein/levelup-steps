@@ -37,14 +37,23 @@ function getClassByName(name){
 }
 
 function get(characterClass, characterLevel, callback){
-    getBasicDescription(characterClass, (err, data) => {
-        var description = data;
-        getDescriptionByClassAndLevel(characterClass, characterLevel,
-            (err, data) => {
-                description += data;
-                callback(err, getDescriptionPage(description));
-        });
-    });
+
+    var locals = clone(characterClass);
+    locals['level'] = characterLevel;
+    pug.renderFile(DESCRIPTIONS_DIR + "page-template.pug", locals, callback);
+
+    // getBasicDescription(characterClass, (err, data) => {
+    //     var description = data;
+    //     getDescriptionByClassAndLevel(characterClass, characterLevel,
+    //         (err, data) => {
+    //             description += data;
+    //             callback(err, getDescriptionPage(description));
+    //     });
+    // });
+}
+
+function clone(object){
+    return JSON.parse(JSON.stringify(object));
 }
 
 function getBasicDescription(characterClass, callback){
