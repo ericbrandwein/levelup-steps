@@ -3,3 +3,6 @@ extends ../page-template.pug
 block description
     if level === '6'
         include expertise.pug
+
+    if ['3', '5', '7', '9', '11', '13', '15', '17', '19'].includes(level)
+        include sneak-attack-increase.pug
