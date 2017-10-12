@@ -19,6 +19,9 @@ block description
     if ['4', '8', '12', '16', '19'].includes(level)
         include ../ability-score-improvement.pug
 
+    if level == '18'
+        include spell-mastery.pug
+
     h3
         u Remember to update these values on your character sheet if necessary:
     ul
