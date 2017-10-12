@@ -1,0 +1,7 @@
+mixin remember(items)
+    h3
+        u Remember to update these values on your character sheet if necessary:
+    ul
+        each description, name in items
+            li #[b= name]
+                = ' ' + description

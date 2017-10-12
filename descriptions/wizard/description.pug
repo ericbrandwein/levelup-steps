@@ -25,6 +25,18 @@ block description
     if level == '20'
         include signature-spells.pug
 
+    include ../remember.pug
+
+    -
+        var itemsToRemember = {
+            'Spell save DC': '= 8 + proficiency bonus + Intelligence modifier',
+            'Spell attack modifier': '= proficiency bonus + \
+                Intelligence modifier',
+            'Prepared spells': '= Intelligence modifier + wizard level \
+                (minimum of one spell)'
+        }
+
+    +remember(itemsToRemember)
     h3
         u Remember to update these values on your character sheet if necessary:
     ul
