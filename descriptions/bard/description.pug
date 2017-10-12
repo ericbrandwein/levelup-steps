@@ -26,3 +26,11 @@ block description
     if level in spellsLearned
         +spells(spellsLearned[level], name)
 
+    include ../remember.pug
+    -
+        var itemsToRemember = {
+            'Spell save DC': '= 8 + proficiency bonus + Charisma modifier',
+            'Spell attack modifier': '= proficiency bonus + Charisma modifier'
+        }
+
+    +remember(itemsToRemember)
