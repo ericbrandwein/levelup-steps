@@ -12,8 +12,18 @@ block description
     if level === '2'
         include arcane-tradition.pug
 
+    // TODO: divide this into each tradition
     if ['6', '10', '14'].includes(level)
         include arcane-tradition-feature.pug
 
     if ['4', '8', '12', '16', '19'].includes(level)
         include ../ability-score-improvement.pug
+
+    h3
+        u Remember to update these values on your character sheet if necessary:
+    ul
+        li #[b Spell save DC] = 8 + proficiency bonus + Intelligence modifier
+        li #[b Spell attack modifier] = proficiency bonus + Intelligence modifier
+        li
+            | #[b Prepared spells] = Intelligence modifier + wizard level
+            | (minimum of one spell)
