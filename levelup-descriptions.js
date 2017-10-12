@@ -22,7 +22,13 @@ Classes = {
     WIZARD: {
         name: 'wizard',
         hitDieNumber: 6,
-        hitPointIncreaseAverage: 4
+        hitPointIncreaseAverage: 4,
+        spellSlotsPerLevel: {
+            '2': {1: 3}, '3': {1: 4, 2: 2}, '4': {2: 3}, '5': {3: 2},
+            '6': {3: 3}, '7': {4: 1}, '8': {4: 2}, '9': {4: 3, 5: 1},
+            '10': {5: 2}, '11': {6: 1}, '13': {7: 1}, '15': {8: 1},
+            '17': {9: 1}, '18': {5: 3}, '19': {6: 2},'20': {7: 2}
+        }
     }
 }
 
