@@ -29,6 +29,9 @@ block description
     if ['5', '10', '15'].includes(level)
         include bardic-inspiration-change.pug
 
+    if level == 2
+        include jack-of-all-trades.pug
+
     include ../remember.pug
     -
         var itemsToRemember = {
