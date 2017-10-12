@@ -52,6 +52,9 @@ block description
     if ['10', '14', '18'].includes(level)
         include magical-secrets.pug
 
+    if level === '20'
+        include superior-inspiration.pug
+
     include ../remember.pug
     -
         var itemsToRemember = {
