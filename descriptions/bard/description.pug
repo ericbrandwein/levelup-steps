@@ -29,8 +29,11 @@ block description
     if ['5', '10', '15'].includes(level)
         include bardic-inspiration-change.pug
 
-    if level == 2
+    if level === '2'
         include jack-of-all-trades.pug
+
+    if ['2', '9', '13', '17'].includes(level)
+        include song-of-rest.pug
 
     include ../remember.pug
     -
