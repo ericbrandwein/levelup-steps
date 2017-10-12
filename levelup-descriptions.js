@@ -40,7 +40,10 @@ function get(characterClass, characterLevel, callback){
 
     var locals = clone(characterClass);
     locals['level'] = characterLevel;
-    pug.renderFile(DESCRIPTIONS_DIR + "page-template.pug", locals, callback);
+    pug.renderFile(
+        DESCRIPTIONS_DIR + characterClass.name + '/description.pug',
+        locals,
+        callback);
 
     // getBasicDescription(characterClass, (err, data) => {
     //     var description = data;
