@@ -43,22 +43,12 @@ function getClassByName(name){
 }
 
 function get(characterClass, characterLevel, callback){
-
     var locals = clone(characterClass);
     locals['level'] = characterLevel;
     pug.renderFile(
         DESCRIPTIONS_DIR + characterClass.name + '/description.pug',
         locals,
         callback);
-
-    // getBasicDescription(characterClass, (err, data) => {
-    //     var description = data;
-    //     getDescriptionByClassAndLevel(characterClass, characterLevel,
-    //         (err, data) => {
-    //             description += data;
-    //             callback(err, getDescriptionPage(description));
-    //     });
-    // });
 }
 
 function clone(object){
@@ -70,18 +60,6 @@ function getBasicDescription(characterClass, callback){
         DESCRIPTIONS_DIR + 'basic-steps.pug',
         characterClass,
         callback);
-}
-
-function getDescriptionPage(description){
-    var head = "<!DOCTYPE html><html><head></head><body>";
-    var tail = "</body></html>";
-    return head + description + tail;
-}
-
-function getDescriptionByClassAndLevel(characterClass, characterLevel, callback){
-    var descriptionFileName =
-        DESCRIPTIONS_DIR + characterClass.name + '/' + characterLevel + '.pug';
-    pug.renderFile(descriptionFileName, characterClass, callback);
 }
 
 module.exports = {
