@@ -14,6 +14,11 @@ Classes = {
         hitDieNumber: 8,
         hitPointIncreaseAverage: 5
     },
+    FIGHTER: {
+        name: 'fighter',
+        hitDieNumber: 10,
+        hitPointIncreaseAverage: 6
+    },
     ROGUE: {
         name: 'rogue',
         hitDieNumber: 8,
