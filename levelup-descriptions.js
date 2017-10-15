@@ -47,9 +47,20 @@ function getClassByName(name){
     }
 }
 
+function getClassNames(){
+    var names = [];
+    for (var c in Classes) {
+        if (Classes.hasOwnProperty(c)) {
+            names.push(Classes[c].name);
+        }
+    }
+    return names;
+}
+
 function get(characterClass, characterLevel, callback){
     var locals = clone(characterClass);
     locals['level'] = characterLevel;
+    locals['classes'] = getClassNames();
     pug.renderFile(
         DESCRIPTIONS_DIR + characterClass.name + '/description.pug',
         locals,

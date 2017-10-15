@@ -6,7 +6,10 @@ html
     body
         form(method='get', action='/')
             label(for='class') Class:
-            input#class(name='class', type='text', value=name)
+            input#class(list='classes', name='class', value=name)
+            datalist#classes
+                for c in classes
+                    option(value=c)
             label(for='level') Level:
             input#level(name='level', type='number', value=level)
             input(type='submit', value='Go!')
