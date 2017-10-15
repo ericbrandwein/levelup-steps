@@ -3,15 +3,28 @@ include mixins.pug
 doctype html
 html
     head
+        link(
+            rel="stylesheet",
+            href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css"
+        )
     body
+        script(src='//code.jquery.com/jquery-1.11.3.min.js')
+        script(src='//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js')
+        script
+            | $(document).ready(function() {
+            |     $('.selector').select2();
+            | });
+
         form(method='get', action='/')
             label(for='class') Class:
-            input#class(list='classes', name='class', value=name)
-            datalist#classes
+            select#class.selector(name='class', value=name)
                 for c in classes
-                    option(value=c)
+                    if c === name
+                        option(value=c, selected)= c
+                    else
+                        option(value=c)= c
             label(for='level') Level:
-            input#level(name='level', type='number', value=level)
+            input#level(name='level', type='number', value=level, min=2, max=20)
             input(type='submit', value='Go!')
 
         h2 Hit Dice Increase
