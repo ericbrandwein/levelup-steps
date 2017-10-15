@@ -1,0 +1,29 @@
+extends ../page-template.pug
+
+block description
+    if [4, 10].includes(level)
+        +cantrips(1, name)
+
+    -
+        var newSpellSlots = {
+            2: {1: 3}, 3: {1: 4, 2: 2}, 4: {2: 3}, 5: {3: 2},
+            6: {3: 3}, 7: {4: 1}, 8: {4: 2}, 9: {4: 3, 5: 1},
+            10: {5: 2}, 11: {6: 1}, 13: {7: 1}, 15: {8: 1},
+            17: {9: 1}, 18: {5: 3}, 19: {6: 2}, 20: {7: 2}
+        }
+
+    if level in newSpellSlots
+        +spell-slots(newSpellSlots[level])
+
+    include ../remember.pug
+
+    -
+        var itemsToRemember = {
+            'Spell save DC': '= 8 + proficiency bonus + Wisdom modifier',
+            'Spell attack modifier': '= proficiency bonus + \
+                Wisdom modifier',
+            'Prepared spells': '= Wisdom modifier + cleric level \
+                (minimum of one spell)'
+        }
+
+    +remember(itemsToRemember)
