@@ -1,7 +1,7 @@
 extends ../page-template.pug
 
 block description
-    if ['4', '10'].includes(level)
+    if [4, 10].includes(level)
         +cantrips(1, name)
 
     if level in spellSlotsPerLevel
@@ -9,20 +9,20 @@ block description
 
     include new-spells.pug
 
-    if level === '2'
+    if level === 2
         include arcane-tradition.pug
 
     // TODO: divide this into each tradition
-    if ['6', '10', '14'].includes(level)
+    if [6, 10, 14].includes(level)
         include arcane-tradition-feature.pug
 
-    if ['4', '8', '12', '16', '19'].includes(level)
+    if [4, 8, 12, 16, 19].includes(level)
         include ../ability-score-improvement.pug
 
-    if level == '18'
+    if level == 18
         include spell-mastery.pug
 
-    if level == '20'
+    if level == 20
         include signature-spells.pug
 
     include ../remember.pug
