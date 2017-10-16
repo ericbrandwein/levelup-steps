@@ -11,11 +11,15 @@ html
         script(src='//code.jquery.com/jquery-1.11.3.min.js')
         script(src='//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js')
         script
+            // This is awful, dont judge me
+            |
+            | const selectedAdditionalInfoOption = '#{additionalInfo}';
+            |
             include ../client-script.js
 
         form(method='get', action='/')
             label(for='class') Class:
-            select#class.selector(name='class', value=name)
+            select#class(name='class')
                 for c in classes
                     if c === name
                         option(value=c, selected)= c
@@ -23,7 +27,10 @@ html
                         option(value=c)= c
             label(for='level') Level:
             input#level(name='level', type='number', value=level, min=2, max=20)
+            label#additional-info-label(style='display:none;')
+            select#additional-info(name='additionalInfo', style='display:none;')
             input(type='submit', value='Go!')
+
 
         include basic-description.pug
 

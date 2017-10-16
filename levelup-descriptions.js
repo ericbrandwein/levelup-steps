@@ -62,10 +62,11 @@ function getClassNames(){
     return names;
 }
 
-function get(characterClass, characterLevel, callback){
+function get(characterClass, characterLevel, additionalInfo, callback){
     var locals = clone(characterClass);
     locals['level'] = characterLevel;
     locals['classes'] = getClassNames();
+    locals['additionalInfo'] = additionalInfo;
     pug.renderFile(
         DESCRIPTIONS_DIR + characterClass.name + '/description.pug',
         locals,
