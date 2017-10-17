@@ -9,9 +9,11 @@ $(document).ready(function() {
 const classesWithAdditionalInfo = {
     barbarian: {
         title: 'Primal Path:',
-        name: 'primalPath',
-        fromLevel: 2,
-        options: ['hola', 'chau', 'hasta luego']
+        fromLevel: 3,
+        options: [
+            {name: 'Path of the Berserker', value: 'berserker'},
+            {name: 'Path of the Totem Warrior', value: 'totem-warrior'}
+        ]
     }
 };
 
@@ -33,11 +35,11 @@ function showAdditionalInfoInputIfNecessary() {
             additionalInfoInput.html('');
             for (var i = 0; i < classAttributes.options.length; i++) {
                 var currentOption = classAttributes.options[i];
-                var option = '<option value="' + currentOption + '"';
-                if (selectedAdditionalInfoOption == currentOption) {
+                var option = '<option value="' + currentOption.value + '"';
+                if (selectedAdditionalInfoOption == currentOption.value) {
                     option += 'selected';
                 }
-                option += '>' + currentOption + '</option>';
+                option += '>' + currentOption.name + '</option>';
                 additionalInfoInput.append(option);
             }
             additionalInfoInput.prop('disabled', false);
