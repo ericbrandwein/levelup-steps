@@ -15,8 +15,8 @@ block description
     if level in newSpellSlots
         +spell-slots(newSpellSlots[level])
 
+block footer
     include ../remember.pug
-
     -
         var itemsToRemember = {
             'Spell save DC': '= 8 + proficiency bonus + Wisdom modifier',

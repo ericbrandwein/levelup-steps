@@ -1,5 +1,6 @@
 var fs = require('fs');
 var pug = require('pug');
+var paths = require('./paths/paths.js');
 
 var DESCRIPTIONS_DIR = './descriptions/'
 
@@ -66,12 +67,14 @@ function get(characterClass, characterLevel, additionalInfo, callback){
     var locals = clone(characterClass);
     locals['level'] = characterLevel;
     locals['classes'] = getClassNames();
-    locals['additionalInfo'] = additionalInfo;
-    require('/classes-with-additional-info.js');
-    pug.renderFile(
-        DESCRIPTIONS_DIR + characterClass.name + '/description.pug',
-        locals,
-        callback);
+    paths.getNewFeature(characterClass.name, additionalInfo, characterLevel,
+        (err, html) => {
+            locals['moreDescriptions'] = html;
+            pug.renderFile(
+                DESCRIPTIONS_DIR + characterClass.name + '/description.pug',
+                locals,
+                callback);
+        });
 }
 
 function clone(object){

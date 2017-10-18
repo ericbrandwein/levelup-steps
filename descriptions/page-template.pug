@@ -16,7 +16,7 @@ html
             |
             | const selectedAdditionalInfoOption = '#{additionalInfo}';
             |
-            include ../client-script.js
+            include ../src/client-script.js
 
         form(method='get', action='/')
             label(for='class') Class:
@@ -36,5 +36,9 @@ html
         include basic-description.pug
 
         block description
+
+        div !{moreDescriptions}
+
+        block footer
 
         include copyright.pug

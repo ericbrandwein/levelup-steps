@@ -1,4 +1,4 @@
-const classesWithAdditionalInfo = {
+const pathsPerClass = {
     barbarian: {
         title: 'Primal Path',
         fromLevel: 3,
@@ -46,18 +46,11 @@ const classesWithAdditionalInfo = {
             {name: 'Arcane Trickster', value: 'arcane-trickster'}
         ]
     },
-    wizard: {
-        title: 'Arcane Tradition',
-        fromLevel: 2,
-        options: [
-            {name: 'School of Abjuration', value: 'abjuration'},
-            {name: 'School of Conjuration', value: 'conjuration'},
-            {name: 'School of Divination', value: 'divination'},
-            {name: 'School of Enchantment', value: 'enchantment'},
-            {name: 'School of Evocation', value: 'evocation'},
-            {name: 'School of Illusion', value: 'illusion'},
-            {name: 'School of Necromancy', value: 'necromancy'},
-            {name: 'School of Transmutation', value: 'transmutation'}
-        ]
-    }
+    wizard: require('./classes/wizard/wizard-paths.js')
 };
+
+function getNewFeature(clazz, path, level, callback) {
+    return pathsPerClass[clazz][path].renderLevelDescriptions(level, callback);
+}
+
+module.exports = {getNewFeature};

@@ -25,8 +25,8 @@ block description
     if level == 20
         include signature-spells.pug
 
+block footer
     include ../remember.pug
-
     -
         var itemsToRemember = {
             'Spell save DC': '= 8 + proficiency bonus + Intelligence modifier',
