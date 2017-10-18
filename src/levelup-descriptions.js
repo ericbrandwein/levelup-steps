@@ -67,6 +67,7 @@ function get(characterClass, characterLevel, additionalInfo, callback){
     locals['level'] = characterLevel;
     locals['classes'] = getClassNames();
     locals['additionalInfo'] = additionalInfo;
+    require('/classes-with-additional-info.js');
     pug.renderFile(
         DESCRIPTIONS_DIR + characterClass.name + '/description.pug',
         locals,
