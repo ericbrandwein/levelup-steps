@@ -61,3 +61,5 @@ const classesWithAdditionalInfo = {
         ]
     }
 };
+
+module.exports = {classesWithAdditionalInfo};
