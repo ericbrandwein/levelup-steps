@@ -28,17 +28,20 @@ class Path {
 
     renderLevelDescriptions(level, callback) {
         var featuresForLevel = this.features[level];
-        var descriptionsMissing = featuresForLevel.length;
-        var descriptions = '';
-        console.log(featuresForLevel);
-        for (var i = 0; i < featuresForLevel.length; i++) {
-            featuresForLevel[i].renderDescription(this.name, (err, html) => {
-                descriptions += html;
-                descriptionsMissing--;
-                if (err || descriptionsMissing == 0) {
-                    callback(err, descriptions);
-                }
-            });
+        if (featuresForLevel) {
+            var descriptionsMissing = featuresForLevel.length;
+            var descriptions = '';
+            for (var i = 0; i < featuresForLevel.length; i++) {
+                featuresForLevel[i].renderDescription(this.name, (err, html) => {
+                    descriptions += html;
+                    descriptionsMissing--;
+                    if (err || descriptionsMissing == 0) {
+                        callback(err, descriptions);
+                    }
+                });
+            }
+        } else {
+            callback(undefined, '');
         }
     }
 }
