@@ -31,4 +31,8 @@ app.get('/', function(req, res) {
     }
 });
 
+app.get('/classes-with-additional-info.js', function(req, res) {
+    res.sendFile(__dirname + '/classes-with-additional-info.js');
+});
+
 app.listen(8080);
