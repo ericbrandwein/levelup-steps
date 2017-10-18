@@ -34,8 +34,11 @@ class ArcaneTradition extends pathClasses.Path {
 }
 
 var abjuration = new ArcaneTradition('Abjuration');
-var projectedWard =
-    new pathClasses.Feature('Projected Ward', __dirname + '/projected-ward.pug');
+var arcaneWard = new pathClasses.Feature(
+    'Arcane Ward', __dirname + '/arcane-ward.pug');
+abjuration.addFeature(2, arcaneWard);
+var projectedWard = new pathClasses.Feature(
+    'Projected Ward', __dirname + '/projected-ward.pug');
 abjuration.addFeature(6, projectedWard);
 
 module.exports = {
