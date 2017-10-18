@@ -1,50 +1,7 @@
-var pug = require('pug');
+var pathClasses = require('../../path-classes.js');
 
-class Feature {
-    constructor(name, descriptionFile) {
-        this.name = name;
-        this.descriptionFile = descriptionFile;
-    }
-
-    renderDescription(pathName, callback) {
-        pug.renderFile(this.descriptionFile,
-            {path: pathName, feature: this.name},
-            callback);
-    }
-}
-
-class Path {
-    constructor(name) {
-        this.name = name;
-        this.features = {};
-    }
-
-    addFeature(level, feature) {
-        if (!this.features[level]) {
-            this.features[level] = [];
-        }
-        this.features[level].push(feature);
-    }
-
-    renderLevelDescriptions(level, callback) {
-        var featuresForLevel = this.features[level];
-        var descriptionsMissing = featuresForLevel.length;
-        var descriptions = '';
-        console.log(featuresForLevel);
-        for (var i = 0; i < featuresForLevel.length; i++) {
-            featuresForLevel[i].renderDescription(this.name, (err, html) => {
-                descriptions += html;
-                descriptionsMissing--;
-                if (err || descriptionsMissing == 0) {
-                    callback(err, descriptions);
-                }
-            });
-        }
-    }
-}
-
-var abjuration = new Path('School of Abjuration');
-var projectedWard = new Feature('Projected Ward', __dirname + '/projected-ward.pug');
+var abjuration = new pathClasses.Path('School of Abjuration');
+var projectedWard = new pathClasses.Feature('Projected Ward', __dirname + '/projected-ward.pug');
 abjuration.addFeature(6, projectedWard);
 
 module.exports = {
