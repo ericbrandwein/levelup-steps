@@ -16,7 +16,7 @@ function showAdditionalInfoInputIfNecessary() {
     for (var className in classesWithAdditionalInfo) {
         var classAttributes = classesWithAdditionalInfo[className];
         if (selectedClass === className &&
-            selectedLevel > classAttributes.fromLevel) {
+            selectedLevel >= classAttributes.fromLevel) {
 
             additionalInfoLabel.html(classAttributes.title + ':');
             additionalInfoLabel.show();
