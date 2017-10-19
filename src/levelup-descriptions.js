@@ -67,6 +67,7 @@ function get(characterClass, characterLevel, additionalInfo, callback){
     var locals = clone(characterClass);
     locals['level'] = characterLevel;
     locals['classes'] = getClassNames();
+    locals['additionalInfo'] = additionalInfo;
     paths.getNewFeatures(characterClass.name, additionalInfo, characterLevel,
         (err, html) => {
             locals['moreDescriptions'] = html;
