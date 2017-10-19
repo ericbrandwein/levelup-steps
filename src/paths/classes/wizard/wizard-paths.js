@@ -49,6 +49,7 @@ newFeature(abjuration, 14, 'Spell Resistance', 'spell-resistance.pug');
 var conjuration = new ArcaneTradition('Conjuration');
 newFeature(conjuration, 2, 'Minor Conjuration', 'minor-conjuration.pug');
 newFeature(conjuration, 6, 'Benign Transposition', 'benign-transposition.pug');
+newFeature(conjuration, 10, 'Focused Conjuration', 'focused-conjuration.pug');
 
 module.exports = {
     abjuration,
