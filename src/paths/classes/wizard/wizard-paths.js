@@ -65,18 +65,37 @@ newFeature(enchantment, 6, 'Instinctive Charm', 'instinctive-charm.pug');
 newFeature(enchantment, 10, 'Split Enchantment', 'split-enchantment.pug');
 newFeature(enchantment, 14, 'Alter Memories', 'alter-memories.pug');
 
+var evocation = new ArcaneTradition('Evocation');
+newFeature(evocation, 2, 'Sculpt Spells', 'sculpt-spells.pug');
+newFeature(evocation, 6, 'Potent Cantrip', 'potent-cantrip.pug');
+newFeature(evocation, 10, 'Empowered Evocation', 'empowered-evocation.pug');
+newFeature(evocation, 14, 'Overchannel', 'overchannel.pug');
+
+var illusion = new ArcaneTradition('Illusion');
+newFeature(illusion, 2, 'Improved Minor Illusion', 'sculpt-spells.pug');
+newFeature(illusion, 6, 'Malleable Illusions', 'malleable-illusions.pug');
+newFeature(illusion, 10, 'Illusiory Self', 'illusiory-self.pug');
+newFeature(illusion, 14, 'Illusiory Reality', 'illusiory-reality.pug');
+
+var necromancy = new ArcaneTradition('Necromancy');
+newFeature(necromancy, 2, 'Grim Harvest', 'grim-harvest.pug');
+newFeature(necromancy, 6, 'Undead Thralls', 'undead-thralls.pug');
+newFeature(necromancy, 10, 'Inured to Undeath', 'inured-to-undeath.pug');
+newFeature(necromancy, 14, 'Command Undead', 'command-undead.pug');
+
+var transmutation = new ArcaneTradition('Transmutation');
+newFeature(transmutation, 2, 'Minor Alchemy', 'minor-alchemy.pug');
+newFeature(transmutation, 6, "Transmuter's Stone", 'transmuters-stone.pug');
+newFeature(transmutation, 10, 'Shapechanger', 'shapechanger.pug');
+newFeature(transmutation, 14, 'Master Transmuter', 'master-transmuter.pug');
 
 module.exports = {
     abjuration,
     conjuration,
     divination,
-    enchantment
+    enchantment,
+    evocation,
+    illusion,
+    necromancy,
+    transmutation
 };
-
-// conjuration: {name: 'School of Conjuration'},
-// divination: {name: 'School of Divination'},
-// enchantment: {name: 'School of Enchantment'},
-// evocation: {name: 'School of Evocation'},
-// illusion: {name: 'School of Illusion'},
-// necromancy: {name: 'School of Necromancy'},
-// transmutation: {name: 'School of Transmutation'}
