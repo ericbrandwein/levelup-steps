@@ -59,10 +59,18 @@ newFeature(divination, 6, 'Expert Divination', 'expert-divination.pug');
 newFeature(divination, 10, 'The Third Eye', 'the-third-eye.pug');
 newFeature(divination, 14, 'Greater Portent', 'greater-portent.pug');
 
+var enchantment = new ArcaneTradition('Enchantment');
+newFeature(enchantment, 2, 'Hypnotic Gaze', 'hypnotic-gaze.pug');
+newFeature(enchantment, 6, 'Instinctive Charm', 'instinctive-charm.pug');
+newFeature(enchantment, 10, 'Split Enchantment', 'split-enchantment.pug');
+newFeature(enchantment, 14, 'Alter Memories', 'alter-memories.pug');
+
+
 module.exports = {
     abjuration,
     conjuration,
-    divination
+    divination,
+    enchantment
 };
 
 // conjuration: {name: 'School of Conjuration'},
