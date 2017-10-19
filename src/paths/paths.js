@@ -3,14 +3,7 @@ const pathsPerClass = {
         berserker: {name: 'Path of the Berserker', value: ''},
         totemWarrior: {name: 'Path of the Totem Warrior', value: ''}
     },
-    bard: {
-        title: 'Bard College',
-        fromLevel: 3,
-        options: [
-            {name: 'College of Lore', value: 'lore'},
-            {name: 'College of Valor', value: 'valor'}
-        ]
-    },
+    bard: require('./classes/bard/bard-paths.js'),
     cleric: {
         title: 'Divine Domain',
         fromLevel: 1,
