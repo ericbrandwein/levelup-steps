@@ -39,14 +39,19 @@ function newFeature(path, level, title, descriptionFile) {
     path.addFeature(level, feature);
 }
 
+// All the 'savant' features are already added when created.
 var abjuration = new ArcaneTradition('Abjuration');
 newFeature(abjuration, 2, 'Arcane Ward', 'arcane-ward.pug');
 newFeature(abjuration, 6, 'Projected Ward', 'projected-ward.pug');
 newFeature(abjuration, 10, 'Improved Abjuration', 'improved-abjuration.pug');
 newFeature(abjuration, 14, 'Spell Resistance', 'spell-resistance.pug');
 
+var conjuration = new ArcaneTradition('Conjuration');
+newFeature(conjuration, 2, 'Minor Conjuration', 'minor-conjuration.pug');
+
 module.exports = {
-    abjuration
+    abjuration,
+    conjuration
 };
 
 // conjuration: {name: 'School of Conjuration'},

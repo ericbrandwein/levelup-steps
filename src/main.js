@@ -34,7 +34,7 @@ app.get('/', function(req, res) {
         res.redirect('/?class=' + clazz.name + '&level=' + level
             + '&additionalInfo=' + additionalInfo);
     } else {
-        descriptions.get(clazz, level, req.query.additionalInfo, (err, data) => {
+        descriptions.get(clazz, level, additionalInfo, (err, data) => {
             if (err) throw err;
             res.end(data);
         });
