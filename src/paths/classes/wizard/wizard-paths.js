@@ -35,7 +35,8 @@ class ArcaneTradition extends pathClasses.Path {
 
 function newFeature(path, level, title, descriptionFile) {
     var feature = new pathClasses.Feature(
-        title, __dirname + '/' + descriptionFile);
+        title,
+        __dirname + '/' + path.school.toLowerCase() + '/' + descriptionFile);
     path.addFeature(level, feature);
 }
 
