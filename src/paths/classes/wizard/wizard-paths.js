@@ -40,6 +40,9 @@ abjuration.addFeature(2, arcaneWard);
 var projectedWard = new pathClasses.Feature(
     'Projected Ward', __dirname + '/projected-ward.pug');
 abjuration.addFeature(6, projectedWard);
+var improvedAbjuration = new pathClasses.Feature(
+    'Improved Abjuration', __dirname + '/improved-abjuration.pug');
+abjuration.addFeature(10, projectedWard);
 
 module.exports = {
     abjuration
