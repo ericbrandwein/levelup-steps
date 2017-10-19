@@ -50,6 +50,7 @@ var conjuration = new ArcaneTradition('Conjuration');
 newFeature(conjuration, 2, 'Minor Conjuration', 'minor-conjuration.pug');
 newFeature(conjuration, 6, 'Benign Transposition', 'benign-transposition.pug');
 newFeature(conjuration, 10, 'Focused Conjuration', 'focused-conjuration.pug');
+newFeature(conjuration, 14, 'Durable Summons', 'durable-summons.pug');
 
 module.exports = {
     abjuration,
