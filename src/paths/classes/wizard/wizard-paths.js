@@ -52,9 +52,16 @@ newFeature(conjuration, 6, 'Benign Transposition', 'benign-transposition.pug');
 newFeature(conjuration, 10, 'Focused Conjuration', 'focused-conjuration.pug');
 newFeature(conjuration, 14, 'Durable Summons', 'durable-summons.pug');
 
+var divination = new ArcaneTradition('Divination');
+newFeature(divination, 2, 'Portent', 'portent.pug');
+newFeature(divination, 6, 'Expert Divination', 'expert-divination.pug');
+newFeature(divination, 10, 'The Third Eye', 'the-third-eye.pug');
+newFeature(divination, 14, 'Greater Portent', 'greater-portent.pug');
+
 module.exports = {
     abjuration,
-    conjuration
+    conjuration,
+    divination
 };
 
 // conjuration: {name: 'School of Conjuration'},
