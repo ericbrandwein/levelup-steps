@@ -4,7 +4,7 @@ const classesWithAdditionalInfo = {
         fromLevel: 3,
         options: [
             {name: 'Path of the Berserker', value: 'berserker'},
-            {name: 'Path of the Totem Warrior', value: 'totem-warrior'}
+            {name: 'Path of the Totem Warrior', value: 'totemWarrior'}
         ]
     },
     bard: {
@@ -33,8 +33,8 @@ const classesWithAdditionalInfo = {
         fromLevel: 3,
         options: [
             {name: 'Champion', value: 'champion'},
-            {name: 'Battle Master', value: 'battle-master'},
-            {name: 'Eldritch Knight', value: 'eldritch-knight'}
+            {name: 'Battle Master', value: 'battleMaster'},
+            {name: 'Eldritch Knight', value: 'eldritchKnight'}
         ]
     },
     rogue: {
@@ -43,7 +43,7 @@ const classesWithAdditionalInfo = {
         options: [
             {name: 'Thief', value: 'thief'},
             {name: 'Assassin', value: 'assassin'},
-            {name: 'Arcane Trickster', value: 'arcane-trickster'}
+            {name: 'Arcane Trickster', value: 'arcaneTrickster'}
         ]
     },
     wizard: {
