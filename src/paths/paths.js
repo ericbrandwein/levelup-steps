@@ -1,11 +1,7 @@
 const pathsPerClass = {
     barbarian: {
-        title: 'Primal Path',
-        fromLevel: 3,
-        options: [
-            {name: 'Path of the Berserker', value: 'berserker'},
-            {name: 'Path of the Totem Warrior', value: 'totem-warrior'}
-        ]
+        berserker: {name: 'Path of the Berserker', value: ''},
+        totemWarrior: {name: 'Path of the Totem Warrior', value: ''}
     },
     bard: {
         title: 'Bard College',
@@ -49,8 +45,20 @@ const pathsPerClass = {
     wizard: require('./classes/wizard/wizard-paths.js')
 };
 
-function getNewFeature(clazz, path, level, callback) {
-    return pathsPerClass[clazz][path].renderLevelDescriptions(level, callback);
+function getNewFeatures(clazz, path, level, callback) {
+    var paths = pathsPerClass[clazz];
+    if (paths) {
+        paths[path].renderLevelDescriptions(level, callback);
+    } else {
+        callback(undefined, '');
+    }
 }
 
-module.exports = {getNewFeature};
+function getPathsForClass(clazz) {
+    return Object.keys(pathsPerClass[clazz]);
+}
+
+module.exports = {
+    getNewFeatures,
+    getPathsForClass
+};
