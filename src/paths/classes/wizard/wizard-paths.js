@@ -33,21 +33,21 @@ class ArcaneTradition extends pathClasses.Path {
     }
 }
 
+function newFeature(path, level, title, descriptionFile) {
+    var feature = new pathClasses.Feature(
+        title, __dirname + '/' + descriptionFile);
+    path.addFeature(level, feature);
+}
+
 var abjuration = new ArcaneTradition('Abjuration');
-var arcaneWard = new pathClasses.Feature(
-    'Arcane Ward', __dirname + '/arcane-ward.pug');
-abjuration.addFeature(2, arcaneWard);
-var projectedWard = new pathClasses.Feature(
-    'Projected Ward', __dirname + '/projected-ward.pug');
-abjuration.addFeature(6, projectedWard);
-var improvedAbjuration = new pathClasses.Feature(
-    'Improved Abjuration', __dirname + '/improved-abjuration.pug');
-abjuration.addFeature(10, projectedWard);
+newFeature(abjuration, 2, 'Arcane Ward', 'arcane-ward.pug');
+newFeature(abjuration, 6, 'Projected Ward', 'projected-ward.pug');
+newFeature(abjuration, 10, 'Improved Abjuration', 'improved-abjuration.pug');
+newFeature(abjuration, 14, 'Spell Resistance', 'spell-resistance.pug');
 
 module.exports = {
     abjuration
 };
-
 
 // conjuration: {name: 'School of Conjuration'},
 // divination: {name: 'School of Divination'},
