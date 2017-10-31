@@ -13,12 +13,12 @@ newFeature(champion, 10,
 newFeature(champion, 15, 'Superior Critical', '/champion/superior-critical.pug');
 newFeature(champion, 18, 'Survivor', '/champion/survivor.pug');
 
-var battleMaster = new pathClasses.Path('BattleMaster');
+var battleMaster = new pathClasses.Path('Battle Master');
 newFeature(battleMaster, 3,
     'Combat Superiority', '/battlemaster/superior-combat.pug');
 newFeature(battleMaster, 3, 'Maneuvers', '/battlemaster/maneuvers.pug');
 newFeature(battleMaster, 3,
-    'War Student', '/battlemaster/war-student.pug');
+    'Student of War', '/battlemaster/war-student.pug');
 newFeature(battleMaster, 7,
     'Study Your Enemy', '/battlemaster/study-your-enemy.pug');
 newFeature(battleMaster, 10,
