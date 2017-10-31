@@ -26,15 +26,7 @@ const pathsPerClass = {
             {name: 'Eldritch Knight', value: 'eldritch-knight'}
         ]
     },
-    rogue: {
-        title: 'Roguish Archetype',
-        fromLevel: 3,
-        options: [
-            {name: 'Thief', value: 'thief'},
-            {name: 'Assassin', value: 'assassin'},
-            {name: 'Arcane Trickster', value: 'arcane-trickster'}
-        ]
-    },
+    rogue: require('./classes/rogue/rogue-paths.js'),
     wizard: require('./classes/wizard/wizard-paths.js')
 };
 
