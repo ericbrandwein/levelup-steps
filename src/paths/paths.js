@@ -4,28 +4,7 @@ const pathsPerClass = {
         totemWarrior: {name: 'Path of the Totem Warrior', value: ''}
     },
     bard: require('./classes/bard/bard-paths.js'),
-    cleric: {
-        title: 'Divine Domain',
-        fromLevel: 1,
-        options: [
-            {name: 'Knowledge Domain', value: 'knowledge'},
-            {name: 'Life Domain', value: 'life'},
-            {name: 'Light Domain', value: 'light'},
-            {name: 'Nature Domain', value: 'nature'},
-            {name: 'Tempest Domain', value: 'tempest'},
-            {name: 'Trickery Domain', value: 'trickery'},
-            {name: 'War Domain', value: 'war'}
-        ]
-    },
-    fighter: {
-        title: 'Martial Archetype',
-        fromLevel: 3,
-        options: [
-            {name: 'Champion', value: 'champion'},
-            {name: 'Battle Master', value: 'battle-master'},
-            {name: 'Eldritch Knight', value: 'eldritch-knight'}
-        ]
-    },
+    fighter: require('./classes/fighter/fighter-paths.js'),
     rogue: require('./classes/rogue/rogue-paths.js'),
     wizard: require('./classes/wizard/wizard-paths.js')
 };
