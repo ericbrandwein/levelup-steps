@@ -30,7 +30,7 @@ var combatSuperiorityLevels = [3, 7, 10, 15];
 addFeatureInLevels(battleMaster, combatSuperiority, combatSuperiorityLevels);
 newFeature(battleMaster, 3, 'Maneuvers', '/battlemaster/maneuvers.pug');
 newFeature(battleMaster, 3,
-    'Student of War', '/battlemaster/war-student.pug');
+    'Student of War', '/battlemaster/student-of-war.pug');
 newFeature(battleMaster, 7,
     'Know Your Enemy', '/battlemaster/know-your-enemy.pug');
 var improvedCombatSuperiority =
