@@ -32,7 +32,7 @@ newFeature(battleMaster, 3, 'Maneuvers', '/battlemaster/maneuvers.pug');
 newFeature(battleMaster, 3,
     'Student of War', '/battlemaster/war-student.pug');
 newFeature(battleMaster, 7,
-    'Study Your Enemy', '/battlemaster/study-your-enemy.pug');
+    'Know Your Enemy', '/battlemaster/know-your-enemy.pug');
 var improvedCombatSuperiority =
     getFeature('Improved Combat Superiority',
         '/battlemaster/improved-combat-superiority.pug');
