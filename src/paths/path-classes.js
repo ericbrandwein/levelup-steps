@@ -6,9 +6,9 @@ class Feature {
         this.descriptionFile = descriptionFile;
     }
 
-    renderDescription(pathName, callback) {
+    renderDescription(pathName, level, callback) {
         pug.renderFile(this.descriptionFile,
-            {path: pathName, feature: this.name},
+            {path: pathName, feature: this.name, level: level},
             callback);
     }
 }
@@ -32,7 +32,7 @@ class Path {
             var descriptionsMissing = featuresForLevel.length;
             var descriptions = '';
             for (var i = 0; i < featuresForLevel.length; i++) {
-                featuresForLevel[i].renderDescription(this.name, (err, html) => {
+                featuresForLevel[i].renderDescription(this.name, level, (err, html) => {
                     descriptions += html;
                     descriptionsMissing--;
                     if (err || descriptionsMissing == 0) {
