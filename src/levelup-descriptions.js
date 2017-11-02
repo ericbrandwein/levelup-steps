@@ -2,7 +2,7 @@ var fs = require('fs');
 var pug = require('pug');
 var paths = require('./paths/paths.js');
 
-var DESCRIPTIONS_DIR = './descriptions/'
+var DESCRIPTIONS_DIR = './src/descriptions/'
 
 Classes = {
     BARBARIAN: {
