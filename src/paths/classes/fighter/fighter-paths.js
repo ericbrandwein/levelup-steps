@@ -1,8 +1,18 @@
 var pathClasses = require('../../path-classes.js');
 
+function getFeature(title, descriptionFile) {
+    return new pathClasses.Feature(title, __dirname + descriptionFile);
+}
+
 function newFeature(path, level, title, descriptionFile) {
-    var feature = new pathClasses.Feature(title, __dirname + descriptionFile);
+    var feature = getFeature(title, descriptionFile);
     path.addFeature(level, feature);
+}
+
+function addFeatureInLevels(path, feature, levels) {
+    for (var i = 0; i < levels.length; i++) {
+        path.addFeature(levels[i], feature);
+    }
 }
 
 var champion = new pathClasses.Path('Champion');
@@ -14,18 +24,22 @@ newFeature(champion, 15, 'Superior Critical', '/champion/superior-critical.pug')
 newFeature(champion, 18, 'Survivor', '/champion/survivor.pug');
 
 var battleMaster = new pathClasses.Path('Battle Master');
-newFeature(battleMaster, 3,
-    'Combat Superiority', '/battlemaster/superior-combat.pug');
+var combatSuperiority =
+    getFeature('Combat Superiority', '/battlemaster/combat-superiority.pug');
+var combatSuperiorityLevels = [3, 7, 10, 15];
+addFeatureInLevels(battleMaster, combatSuperiority, combatSuperiorityLevels);
 newFeature(battleMaster, 3, 'Maneuvers', '/battlemaster/maneuvers.pug');
 newFeature(battleMaster, 3,
     'Student of War', '/battlemaster/war-student.pug');
 newFeature(battleMaster, 7,
     'Study Your Enemy', '/battlemaster/study-your-enemy.pug');
-newFeature(battleMaster, 10,
-    'Improved Combat Superiority', '/battlemaster/improved-superior-combat.pug');
+var improvedCombatSuperiority =
+    getFeature('Improved Combat Superiority',
+        '/battlemaster/improved-combat-superiority.pug');
+var improvedCombatSuperiorityLevels = [10, 18];
+addFeatureInLevels(battleMaster, improvedCombatSuperiority,
+    improvedCombatSuperiorityLevels);
 newFeature(battleMaster, 15, 'Relentless', '/battlemaster/relentless.pug');
-newFeature(battleMaster, 18,
-    'Improved Combat Superiority', '/battlemaster/improved-superior-combat.pug');
 
 var eldritchKnight = new pathClasses.Path('Eldritch Knight');
 newFeature(eldritchKnight, 3,
