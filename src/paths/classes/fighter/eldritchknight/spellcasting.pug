@@ -28,18 +28,17 @@ block description
             16: {3: 3}, 19: {4: 1}
         };
         var spellsLearnedPerLevel = {
-            3: 3, 4: 1, 7: 1, 8: 1, 10: 1, 11: 1, 13: 1, 14: 1, 16: 1, 19: 1,
+            4: 1, 7: 1, 8: 1, 10: 1, 11: 1, 13: 1, 14: 1, 16: 1, 19: 1,
             20: 1
         };
         var levelsWithSpellsFromAnySchool = [8, 14, 20]
 
     if level in spellsLearnedPerLevel
         +spells(spellsLearnedPerLevel[level], 'Wizard')
-            if level !== 3
-                if levelsWithSpellsFromAnySchool.includes(level)
-                    | These can come from any school of magic.
-                else
-                    | These must all be abjuration or evocation spells.
+            if levelsWithSpellsFromAnySchool.includes(level)
+                | These can come from any school of magic.
+            else
+                | These must all be abjuration or evocation spells.
         p
             | You can also replace one of the wizard spells you know with another spell of your choice from the wizard spell list. The new spell must be of a level for which you have spell slots, and it must be an abjuration or evocation spell, unless you're replacing the spell you gained at 8th, 14th, or 20th level.
 

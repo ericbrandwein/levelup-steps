@@ -39,7 +39,7 @@ var eldritchKnight = new pathClasses.Path('Eldritch Knight');
 var spellcasting =
     getFeature('Spellcasting', '/eldritchknight/spellcasting.pug');
 var spellcastingLevels =
-    [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+    [3, 4, 7, 8, 10, 11, 13, 14, 16, 19, 20];
 utils.addFeatureInLevels(eldritchKnight, spellcasting, spellcastingLevels);
 newFeature(eldritchKnight, 3, 'Weapon Bond', '/eldritchknight/weapon-bond.pug');
 newFeature(eldritchKnight, 7,
