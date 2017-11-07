@@ -1,8 +1,5 @@
 const pathsPerClass = {
-    barbarian: {
-        berserker: {name: 'Path of the Berserker', value: ''},
-        totemWarrior: {name: 'Path of the Totem Warrior', value: ''}
-    },
+    barbarian: require('./classes/barbarian/barbarian-paths.js'),
     bard: require('./classes/bard/bard-paths.js'),
     fighter: require('./classes/fighter/fighter-paths.js'),
     rogue: require('./classes/rogue/rogue-paths.js'),
