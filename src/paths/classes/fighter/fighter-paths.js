@@ -1,4 +1,5 @@
 var pathClasses = require('../../path-classes.js');
+var utils = require('../../path-classes-utils.js');
 
 function getFeature(title, descriptionFile) {
     return new pathClasses.Feature(title, __dirname + descriptionFile);
@@ -7,12 +8,6 @@ function getFeature(title, descriptionFile) {
 function newFeature(path, level, title, descriptionFile) {
     var feature = getFeature(title, descriptionFile);
     path.addFeature(level, feature);
-}
-
-function addFeatureInLevels(path, feature, levels) {
-    for (var i = 0; i < levels.length; i++) {
-        path.addFeature(levels[i], feature);
-    }
 }
 
 var champion = new pathClasses.Path('Champion');
@@ -27,7 +22,7 @@ var battleMaster = new pathClasses.Path('Battle Master');
 var combatSuperiority =
     getFeature('Combat Superiority', '/battlemaster/combat-superiority.pug');
 var combatSuperiorityLevels = [3, 7, 10, 15];
-addFeatureInLevels(battleMaster, combatSuperiority, combatSuperiorityLevels);
+utils.addFeatureInLevels(battleMaster, combatSuperiority, combatSuperiorityLevels);
 newFeature(battleMaster, 3,
     'Student of War', '/battlemaster/student-of-war.pug');
 newFeature(battleMaster, 7,
@@ -36,15 +31,16 @@ var improvedCombatSuperiority =
     getFeature('Improved Combat Superiority',
         '/battlemaster/improved-combat-superiority.pug');
 var improvedCombatSuperiorityLevels = [10, 18];
-addFeatureInLevels(battleMaster, improvedCombatSuperiority,
+utils.addFeatureInLevels(battleMaster, improvedCombatSuperiority,
     improvedCombatSuperiorityLevels);
 newFeature(battleMaster, 15, 'Relentless', '/battlemaster/relentless.pug');
 
 var eldritchKnight = new pathClasses.Path('Eldritch Knight');
 var spellcasting =
     getFeature('Spellcasting', '/eldritchknight/spellcasting.pug');
-var spellcastingLevels = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-addFeatureInLevels(eldritchKnight, spellcasting, spellcastingLevels);
+var spellcastingLevels =
+    [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+utils.addFeatureInLevels(eldritchKnight, spellcasting, spellcastingLevels);
 newFeature(eldritchKnight, 3, 'Weapon Bond', '/eldritchknight/weapon-bond.pug');
 newFeature(eldritchKnight, 7,
     'War Magic', '/eldritchknight/war-magic.pug');
