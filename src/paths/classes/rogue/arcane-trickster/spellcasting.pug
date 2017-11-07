@@ -1,0 +1,46 @@
+extends ../../../path-feature-template.pug
+include ../../../../descriptions/mixins.pug
+
+block description
+    if level === 3
+        | You gain the ability to cast spells.
+        br
+        | #[b Cantrips]. You learn three cantrips: mage hand and two other cantrips of your choice from the wizard spell list. You learn another wizard cantrip of your choice at 10th level.
+        br
+        | #[b Spell Slots]. To cast a spell, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.
+        br
+        | For example, if you know the 1st-level spell charm person and have a 1st-level and a 2nd-level spell slot available, you can cast charm person using either slot.
+        br
+        | #[b Spells Known of 1st-Level and Higher]. You know three 1st-level wizard spells of your choice, two of which you must choose from the enchantment and illusion spells on the wizard spell list.
+        br
+        | #[b Spellcasting Ability]. Intelligence is your spellcasting ability for your wizard spells, since you learn your spells through dedicated study and memorization. You use your Intelligence whenever a spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a wizard spell you cast and when making an attack roll with one.
+        ul
+            li #[b Spell save DC] = 8 + your proficiency bonus + your Intelligence modifier
+            li #[b Spell attack modifier] = your proficiency bonus + your Intelligence modifier
+
+    if level === 10
+        +cantrips(1, 'Wizard')
+
+    -
+        var spellSlotsPerLevel = {
+            3: {1: 2}, 4: {1: 3}, 7: {1: 4, 2: 2},
+            10: {2: 3}, 13: {3: 2},
+            16: {3: 3}, 19: {4: 1}
+        };
+        var spellsLearnedPerLevel = {
+            4: 1, 7: 1, 8: 1, 10: 1, 11: 1, 13: 1, 14: 1, 16: 1, 19: 1,
+            20: 1
+        };
+        var levelsWithSpellsFromAnySchool = [8, 14, 20]
+
+    if level in spellsLearnedPerLevel
+        +spells(spellsLearnedPerLevel[level], 'Wizard')
+            if levelsWithSpellsFromAnySchool.includes(level)
+                | These can come from any school of magic.
+            else
+                | These must all be enchantment or illusion spells.
+        p
+            | You can also replace one of the wizard spells you know with another spell of your choice from the wizard spell list. The new spell must be of a level for which you have spell slots, and it must be an enchantment or illusion spell, unless you're replacing the spell you gained at 8th, 14th, or 20th level.
+
+    if level in spellSlotsPerLevel
+        +spell-slots(spellSlotsPerLevel[level])
