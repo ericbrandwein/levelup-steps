@@ -45,4 +45,8 @@ app.get('/classes-with-additional-info.js', function(req, res) {
     res.sendFile(__dirname + '/classes-with-additional-info.js');
 });
 
+app.get('/papyrus-background.jpg', function(req, res) {
+    res.sendFile(__dirname + '/papyrus-background.jpg');
+});
+
 app.listen(8080);
