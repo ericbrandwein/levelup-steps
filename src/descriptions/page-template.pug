@@ -3,20 +3,53 @@ include mixins.pug
 doctype html
 html
     head
+        title Go level yourself.
         link(
             rel="stylesheet",
             href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css"
         )
+        style.
+            body {
+                background-image: url("https://www.outdoorfabrics.com/images/products/Heritage-Papyrus_18006-0000.jpg");
+                text-align: center;
+            }
+
+            ul {
+                list-style-position: inside;
+            }
+
+            h1, h2, h3, h4, h5, h6, b {
+                color: #422518;
+            }
+
+            form label {
+                padding-left: 0.5em;
+                padding-right: 0.5em;
+            }
+
+            form select#class {
+                width: 5cm;
+            }
+
+            form input[type='submit'] {
+                margin-left: 0.5cm;
+            }
+
+            .copyright {
+                color: #333333;
+            }
     body
         script(src='//code.jquery.com/jquery-1.11.3.min.js')
         script(src='//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js')
         script(src='/classes-with-additional-info.js')
         script
-            // This is awful, dont judge me
+            //- This is awful, dont judge me
             |
             | const selectedAdditionalInfoOption = '#{additionalInfo}';
             |
             include ../client-script.js
+
+        h1 What happens when I level up my D&D 5e character?
 
         form(method='get', action='/')
             label(for='class') Class:
@@ -30,7 +63,7 @@ html
             input#level(name='level', type='number', value=level, min=2, max=20)
             label#additional-info-label(style='display:none;')
             select#additional-info(name='additionalInfo', style='display:none;')
-            input(type='submit', value='Go!')
+            input(type='submit', value='Tell me!')
 
 
         include basic-description.pug
