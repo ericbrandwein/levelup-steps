@@ -41,8 +41,10 @@ addFeatureInLevels(battleMaster, improvedCombatSuperiority,
 newFeature(battleMaster, 15, 'Relentless', '/battlemaster/relentless.pug');
 
 var eldritchKnight = new pathClasses.Path('Eldritch Knight');
-newFeature(eldritchKnight, 3,
-    'Spellcasting', '/eldritchknight/spellcasting.pug');
+var spellcasting =
+    getFeature('Spellcasting', '/eldritchknight/spellcasting.pug');
+var spellcastingLevels = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+addFeatureInLevels(eldritchKnight, spellcasting, spellcastingLevels);
 newFeature(eldritchKnight, 3, 'Weapon Bond', '/eldritchknight/weapon-bond.pug');
 newFeature(eldritchKnight, 7,
     'War Magic', '/eldritchknight/war-magic.pug');

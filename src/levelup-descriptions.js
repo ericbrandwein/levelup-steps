@@ -70,6 +70,7 @@ function get(characterClass, characterLevel, additionalInfo, callback){
     locals['additionalInfo'] = additionalInfo;
     paths.getNewFeatures(characterClass.name, additionalInfo, characterLevel,
         (err, html) => {
+            if (err) console.log(err);
             locals['moreDescriptions'] = html;
             pug.renderFile(
                 DESCRIPTIONS_DIR + characterClass.name + '/description.pug',
