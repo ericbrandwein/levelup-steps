@@ -1,6 +1,7 @@
 const pathsPerClass = {
     barbarian: require('./classes/barbarian/barbarian-paths.js'),
     bard: require('./classes/bard/bard-paths.js'),
+    cleric: require('./classes/cleric/cleric-paths.js'),
     fighter: require('./classes/fighter/fighter-paths.js'),
     rogue: require('./classes/rogue/rogue-paths.js'),
     wizard: require('./classes/wizard/wizard-paths.js')
