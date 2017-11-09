@@ -18,6 +18,12 @@ block description
     if [2, 6, 18].includes(level)
         include channel-divinity.pug
 
+    if [4, 8, 12, 16, 18].includes(level)
+        include ../ability-score-improvement.pug
+
+    if [5, 8, 11, 14, 17].includes(level)
+        include destroy-undead.pug
+
 block footer
     include ../remember.pug
     -
