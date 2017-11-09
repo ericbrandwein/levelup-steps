@@ -15,6 +15,9 @@ block description
     if level in newSpellSlots
         +spell-slots(newSpellSlots[level])
 
+    if [2, 6, 18].includes(level)
+        include channel-divinity.pug
+
 block footer
     include ../remember.pug
     -
