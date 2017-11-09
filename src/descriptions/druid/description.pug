@@ -1,3 +1,5 @@
 extends ../page-template.pug
 
 block description
+    if [2, 4, 8].includes(level)
+        include wild-shape.pug

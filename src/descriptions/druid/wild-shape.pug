@@ -1,0 +1,27 @@
+-
+    maxCrPerLevel = {2: '1/4', 4: '1/2', 8: 1};
+    limitationsPerLevel = {2: 'No flying or swimming speed',
+        4: 'No flying speed', 8: 'None'};
+    animalPerLevel = {2: 'Wolf', 4: 'Crocodile', 8: 'Giant Eagle'};
+
+h2 Wild Shape
+p
+    if level === 2
+        | You can use your action to magically assume the form of a beast you have seen before. You can use this feature twice. You regain expended uses when you finish a short or long rest.
+        br
+        | Your druid level determines the beasts you can turn into. At level #{level}, you can turn to a beast of Max. CR #{maxCrPerLevel[level]} with these limitations: #{limitationsPerLevel[level]}. For example, you can turn into a #{animalPerLevel[level]}. You can stay in this form for a number of hours equal to half your druid level (rounded down). You then revert to your normal form unless you expend another use of this feature. You may revert back to your normal form earlier by using a bonus action on your turn. You automatically convert if you fall unconscious, drop to 0 hit points, or die.
+        br
+        | While transformed, the following rules apply:
+        ul
+            li
+                | Your game statistic are replaced by the beast's, except as follows: you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain your skill and saving throw proficiencies, in addition to gaining those of the creature. If you both have the same proficiency, use the beast's bonus if it is higher. You cannot use any legendary or lair action of the creature.
+            li
+                | When you transform, you assume the beast's hit point and HD. When you revert to your normal form, you return to the number of hit points you had when you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your natural form. For example, if you have 1 hit point left in animal form and take 10 damage, you revert and your natural form takes 9 damage. As long as your normal form still has more then 0 hit points, you remain conscious.
+            li
+                | You can't cast spells, and your ability to speak or take any action that require hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration for any spells you have already cast, however, or prevent you from taking any actions that are part of a spell you have already cast.
+            li
+                | You retain the benefit of any feature gained from your class, race, or other source, and can use them if your beast form is physically capable of doing so. However, you can't use special senses, such as darkvision, unless your new form also has that sense.
+            li
+                | You choose whether your equipment falls to the ground, merges into your new form, or is worn by it. Worn equipment functions as normal, but the DM decides whether it is practical for the new form to wear. Your equipment doesn't change size or shape to match your new form. Merged equipment has no effect until you leave the form.
+    else
+        | With your Wild Shape feature, you can now turn into a beast of maximum CR #{maxCrPerLevel[level]} with these limitations: #{limitationsPerLevel[level]}. For example, you can turn into a #{animalPerLevel[level]}.
