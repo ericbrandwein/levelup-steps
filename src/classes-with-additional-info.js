@@ -28,6 +28,14 @@ const classesWithAdditionalInfo = {
             {name: 'War Domain', value: 'war'}
         ]
     },
+    druid: {
+        title: 'Druidic Circle',
+        fromLevel: 2,
+        options: [
+            {name: 'Circle of the Land', value: 'land'},
+            {name: 'Circle of the Moon', value: 'moon'}
+        ]
+    },
     fighter: {
         title: 'Martial Archetype',
         fromLevel: 3,

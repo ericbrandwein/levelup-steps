@@ -15,6 +15,11 @@ Classes = {
         hitDieNumber: 8,
         hitPointIncreaseAverage: 5
     },
+    DRUID: {
+        name: 'druid',
+        hitDieNumber: 8,
+        hitPointIncreaseAverage: 5
+    },
     CLERIC: {
         name: 'cleric',
         hitDieNumber: 8,
